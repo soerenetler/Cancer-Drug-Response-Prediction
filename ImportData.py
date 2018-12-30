@@ -89,7 +89,4 @@ def importDataAsTable(includeDrugFeatures, includeCellFeatures,
     elif includeCellFeatures:
         return pd.merge(df, drug_df, left_on="drug_id", right_index=True, validate="many_to_one", sort=False).to_sparse(fill_value=False)
     else:
-        return df.to_sparse(fill_value=False)
-    
-
-    return df
+        return df
